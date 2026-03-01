@@ -9,7 +9,7 @@ import User from './models/User';
 
 async function seed() {
     try {
-        const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/swasthyapath';
+        const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/swasthai';
         await mongoose.connect(mongoURI);
         console.log('✅ Connected to MongoDB');
 

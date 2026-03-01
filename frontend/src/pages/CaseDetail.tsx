@@ -43,7 +43,7 @@ export default function CaseDetail() {
     const [reviewed, setReviewed] = useState(false);
 
     useEffect(() => {
-        if (!localStorage.getItem('swasthya_token')) {
+        if (!localStorage.getItem('swasthai_token')) {
             navigate('/login');
             return;
         }

@@ -1,15 +1,15 @@
-# SwasthyaPath – AI-Assisted Tele-Triage & Guidance Platform
+# Swasth AI – AI-Assisted Tele-Triage & Guidance Platform
 
 > **Hackathon Theme**: AI for Social Good
 > **Problem Statement**: AI-Assisted Telemedicine Platform
 
-SwasthyaPath is a web-based health guidance platform that helps users understand their symptoms and decide on next steps — rest at home, visit a clinic, or seek urgent care. It does **NOT** provide medical diagnosis.
+Swasth AI is a web-based health guidance platform that helps users understand their symptoms and decide on next steps — rest at home, visit a clinic, or seek urgent care. It does **NOT** provide medical diagnosis.
 
 ## 🧠 Key Differentiator: Rules-Based Triage (NOT Raw AI)
 
-Unlike simply asking an AI chatbot, SwasthyaPath uses a **clinically-informed rules engine** for consistent, reproducible triage decisions. AI (Gemini) is used only for understanding symptom text and generating friendly explanations — **never for the triage decision itself**.
+Unlike simply asking an AI chatbot, Swasth AI uses a **clinically-informed rules engine** for consistent, reproducible triage decisions. AI (Gemini) is used only for understanding symptom text and generating friendly explanations — **never for the triage decision itself**.
 
-| Feature | Raw AI Chatbot | SwasthyaPath |
+| Feature | Raw AI Chatbot | Swasth AI |
 |---|---|---|
 | Triage Decision | LLM guesses (inconsistent) | Rules engine (consistent) |
 | Assessment | Unstructured | Guided 4-6 question flow |
@@ -57,7 +57,7 @@ npm install
 
 Edit `backend/.env`:
 ```env
-MONGODB_URI=mongodb://localhost:27017/swasthyapath
+MONGODB_URI=mongodb://localhost:27017/swasthai
 GEMINI_API_KEY=your_key_here    # Optional - works without it
 JWT_SECRET=your_secret_here
 PORT=5000

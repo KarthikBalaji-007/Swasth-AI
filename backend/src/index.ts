@@ -24,7 +24,7 @@ app.use(express.json({ limit: '1mb' }));
 
 // --- Health check endpoint ---
 app.get('/api/health', (_req, res) => {
-    res.json({ status: 'ok', service: 'SwasthyaPath API', timestamp: new Date().toISOString() });
+    res.json({ status: 'ok', service: 'Swasth AI API', timestamp: new Date().toISOString() });
 });
 
 // --- Mount API routes ---
@@ -40,7 +40,7 @@ async function startServer() {
     try {
         await connectDB();
         app.listen(PORT, () => {
-            console.log(`🚀 SwasthyaPath API running on http://localhost:${PORT}`);
+            console.log(`🚀 Swasth AI API running on http://localhost:${PORT}`);
             console.log(`📋 Health check: http://localhost:${PORT}/api/health`);
         });
     } catch (error) {

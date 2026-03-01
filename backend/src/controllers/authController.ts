@@ -32,7 +32,7 @@ export async function login(req: Request, res: Response): Promise<void> {
         }
 
         // Generate JWT token (24h expiry for demo)
-        const secret = process.env.JWT_SECRET || 'swasthyapath_default_secret';
+        const secret = process.env.JWT_SECRET || 'swasthai_default_secret';
         const token = jwt.sign(
             { userId: user._id, username: user.username, role: user.role },
             secret,

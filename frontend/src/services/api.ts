@@ -1,5 +1,5 @@
 // frontend/src/services/api.ts
-// API client for communicating with the SwasthyaPath backend
+// API client for communicating with the Swasth AI backend
 import axios from 'axios';
 
 const api = axios.create({
@@ -10,7 +10,7 @@ const api = axios.create({
 
 // Attach auth token if available (for dashboard routes)
 api.interceptors.request.use((config) => {
-    const token = localStorage.getItem('swasthya_token');
+    const token = localStorage.getItem('swasthai_token');
     if (token) {
         config.headers.Authorization = `Bearer ${token}`;
     }

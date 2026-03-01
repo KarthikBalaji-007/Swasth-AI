@@ -1,11 +1,11 @@
 {
     "app": {
-        "name": "SwasthyaPath",
+        "name": "Swasth AI",
         "tagline": "AI-Assisted Health Guidance",
         "subtitle": "Get preliminary, non-diagnostic health guidance in minutes"
     },
     "landing": {
-        "welcome": "Welcome to SwasthyaPath",
+        "welcome": "Welcome to Swasth AI",
         "description": "Describe your symptoms and receive guided health advice. Our AI-assisted triage system helps you understand when to rest at home, visit a clinic, or seek urgent care.",
         "getStarted": "Get Started",
         "howItWorks": "How It Works",

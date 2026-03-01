@@ -36,7 +36,7 @@ export default function Dashboard() {
 
     // Check auth on mount
     useEffect(() => {
-        const token = localStorage.getItem('swasthya_token');
+        const token = localStorage.getItem('swasthai_token');
         if (!token) {
             navigate('/login');
             return;
@@ -58,7 +58,7 @@ export default function Dashboard() {
             setStats(statsData);
         } catch (err: any) {
             if (err.response?.status === 401) {
-                localStorage.removeItem('swasthya_token');
+                localStorage.removeItem('swasthai_token');
                 navigate('/login');
             }
         } finally {
@@ -67,14 +67,14 @@ export default function Dashboard() {
     }
 
     function handleLogout() {
-        localStorage.removeItem('swasthya_token');
-        localStorage.removeItem('swasthya_user');
+        localStorage.removeItem('swasthai_token');
+        localStorage.removeItem('swasthai_user');
         navigate('/login');
     }
 
     const userName = (() => {
         try {
-            const user = JSON.parse(localStorage.getItem('swasthya_user') || '{}');
+            const user = JSON.parse(localStorage.getItem('swasthai_user') || '{}');
             return user.displayName || 'Reviewer';
         } catch { return 'Reviewer'; }
     })();
@@ -156,8 +156,8 @@ export default function Dashboard() {
                                         </td>
                                         <td className="px-4 py-3">
                                             <span className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold ${c.riskBand === 'RED'
-                                                    ? 'bg-red-100 text-red-700'
-                                                    : 'bg-amber-100 text-amber-700'
+                                                ? 'bg-red-100 text-red-700'
+                                                : 'bg-amber-100 text-amber-700'
                                                 }`}>
                                                 {c.riskBand === 'RED' ? '🔴' : '🟡'} {c.riskBand}
                                             </span>
@@ -165,8 +165,8 @@ export default function Dashboard() {
                                         <td className="px-4 py-3 text-slate-700 max-w-xs truncate">{c.primaryComplaint}</td>
                                         <td className="px-4 py-3">
                                             <span className={`text-xs font-medium px-2 py-1 rounded-lg ${c.status === 'REVIEWED'
-                                                    ? 'bg-green-100 text-green-700'
-                                                    : 'bg-slate-100 text-slate-600'
+                                                ? 'bg-green-100 text-green-700'
+                                                : 'bg-slate-100 text-slate-600'
                                                 }`}>
                                                 {c.status}
                                             </span>

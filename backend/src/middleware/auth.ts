@@ -27,7 +27,7 @@ export function authenticate(req: AuthRequest, res: Response, next: NextFunction
     const token = authHeader.split(' ')[1];
 
     try {
-        const secret = process.env.JWT_SECRET || 'swasthyapath_default_secret';
+        const secret = process.env.JWT_SECRET || 'swasthai_default_secret';
         const decoded = jwt.verify(token, secret) as {
             userId: string;
             username: string;

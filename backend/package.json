@@ -1,7 +1,7 @@
 {
-  "name": "swasthyapath-backend",
+  "name": "swasth-ai-backend",
   "version": "1.0.0",
-  "description": "SwasthyaPath AI-Assisted Tele-Triage Backend",
+  "description": "Swasth AI - AI-Assisted Tele-Triage Backend",
   "main": "dist/index.js",
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
