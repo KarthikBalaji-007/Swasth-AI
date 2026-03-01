@@ -1,0 +1,91 @@
+{
+    "app": {
+        "name": "SwasthyaPath",
+        "tagline": "AI-Assisted Health Guidance",
+        "subtitle": "Get preliminary, non-diagnostic health guidance in minutes"
+    },
+    "landing": {
+        "welcome": "Welcome to SwasthyaPath",
+        "description": "Describe your symptoms and receive guided health advice. Our AI-assisted triage system helps you understand when to rest at home, visit a clinic, or seek urgent care.",
+        "getStarted": "Get Started",
+        "howItWorks": "How It Works",
+        "step1": "Describe your symptoms in your own words",
+        "step2": "Answer a few guided follow-up questions",
+        "step3": "Receive personalized guidance and next steps",
+        "notADoctor": "This is NOT a medical diagnosis tool"
+    },
+    "symptom": {
+        "welcome": "Hello! I'm your health guidance assistant. Please describe what you're feeling.",
+        "placeholder": "e.g., I have had a fever and cough for 2 days...",
+        "submit": "Submit",
+        "ageRange": "Age Group",
+        "gender": "Gender",
+        "child": "Child (0-17)",
+        "adult": "Adult (18-59)",
+        "olderAdult": "Older Adult (60+)",
+        "male": "Male",
+        "female": "Female",
+        "other": "Other / Prefer not to say",
+        "analyzing": "Analyzing your symptoms...",
+        "answering": "Processing your answer..."
+    },
+    "result": {
+        "title": "Your Assessment Result",
+        "GREEN": "Self-Care at Home",
+        "YELLOW": "Consult a Doctor",
+        "RED": "Urgent Care Needed",
+        "greenDesc": "Your symptoms appear manageable at home",
+        "yellowDesc": "We recommend speaking with a healthcare provider",
+        "redDesc": "Please seek medical attention promptly",
+        "nextSteps": "Recommended Next Steps",
+        "safetyReminders": "Important Safety Reminders",
+        "newAssessment": "Start New Assessment",
+        "recommendedAction": "Recommended Action",
+        "SELF_CARE": "Rest and self-care at home",
+        "NON_URGENT_CONSULT": "Book a teleconsult or visit your doctor within 24-48 hours",
+        "URGENT_CARE": "Visit the nearest emergency room or call 112 immediately"
+    },
+    "dashboard": {
+        "title": "Reviewer Dashboard",
+        "cases": "Triage Cases",
+        "caseId": "Case ID",
+        "time": "Time",
+        "riskBand": "Risk Level",
+        "complaint": "Primary Complaint",
+        "status": "Status",
+        "actions": "Actions",
+        "viewDetails": "View Details",
+        "markReviewed": "Mark as Reviewed",
+        "reviewNotes": "Review Notes",
+        "notesPlaceholder": "Enter your review notes here...",
+        "backToList": "Back to Cases",
+        "qaTimeline": "Question & Answer Timeline",
+        "triageOutcome": "Triage Outcome",
+        "noData": "No cases found.",
+        "filterBy": "Filter by",
+        "all": "All",
+        "new": "New",
+        "reviewed": "Reviewed",
+        "stats": "Overview",
+        "totalSessions": "Total Sessions",
+        "pendingReview": "Pending Review",
+        "logout": "Logout"
+    },
+    "auth": {
+        "login": "Reviewer Login",
+        "username": "Username",
+        "password": "Password",
+        "loginButton": "Sign In",
+        "error": "Invalid credentials. Please try again.",
+        "loggingIn": "Signing in..."
+    },
+    "common": {
+        "loading": "Loading...",
+        "error": "Something went wrong. Please try again.",
+        "disclaimer": "⚠️ This tool does NOT provide medical diagnosis. It offers preliminary guidance only. Always consult a qualified healthcare professional. In emergencies, call 112.",
+        "language": "Language",
+        "home": "Home",
+        "help": "Help",
+        "emergency": "Emergency? Call 112"
+    }
+}

@@ -1,0 +1,1094 @@
+1.0 Project Overview
+1.1 Project Title
+Project Title: SwasthyaPath – AI-Assisted Tele-Triage & Guidance Platform (Prototype)
+
+1.2 Problem Statement (PS)
+Access to quality healthcare remains uneven, particularly in remote or underserved areas, and among students or workers who are unsure whether their symptoms warrant professional care. Many people struggle to interpret symptoms, decide on urgency, and choose an appropriate care pathway (self-care, clinic visit, teleconsultation, or emergency care). Existing telemedicine services often require users to already know when to seek care, which can result in delayed treatment or unnecessary visits.
+
+The problem statement from the hackathon is:
+
+“Develop a virtual healthcare platform that can guide users through the initial stages of a medical concern. The system should allow people to describe their symptoms and receive an early assessment, along with suggestions for next steps – whether it's home care or speaking with a doctor.”
+
+1.3 Background and Context
+Verified facts (from literature and practice):
+
+Telemedicine and telehealth are widely used approaches to improve access to care in rural and underserved communities by reducing the need for long-distance travel and enabling remote consultations.
+
+Symptom checkers and virtual triage tools exist as digital healthcare solutions that help people describe symptoms, answer structured questions, and receive recommendations such as “self-care at home”, “book an appointment”, or “go to emergency care”.
+
+Some electronic symptom assessment tools (e.g., Omaolo ESC in Finland) use structured question flows and algorithms and have been clinically evaluated for triage safety, showing potential to guide patients to appropriate triage destinations.
+​
+
+Rural and underserved populations face barriers to telehealth including limited broadband access, limited access to devices, and technology literacy challenges, all of which impact their ability to use digital health services.
+
+Design assumptions (explicit, not claimed as external facts):
+
+Users often hesitate to seek care because they are unsure if symptoms are serious enough, fear overburdening healthcare systems, or are concerned about cost and travel.
+
+An accessible digital assistant that can help users interpret symptoms and suggest next steps (without providing formal diagnosis) can reduce decision anxiety and encourage appropriate care seeking.
+
+Campuses (universities, colleges) and community centers can act as early deployment sites (kiosks or web apps), with potential extension to rural communities via NGOs and local health workers.
+
+The prototype will target English plus at least one Indian language for content and interaction, with a design that can scale to more languages later.
+
+1.4 Alignment with “AI for Social Good”
+The solution uses AI for early, non-diagnostic guidance, helping users understand symptom seriousness, which supports more equitable access to basic medical guidance.
+
+It is designed for populations with limited or uncertain access to healthcare, complementing telehealth rather than replacing clinicians.
+
+It emphasizes safety, transparency, and human-in-the-loop oversight, which aligns with emerging guidance on safer AI-assisted triage tools and the need for accountability and bias mitigation.
+
+1.5 Target Users and Stakeholders
+Primary users (end users):
+
+Students and young adults on campuses (hostels, PGs) who need initial guidance on whether to visit a clinic, book teleconsultation, or manage symptoms at home.
+
+Residents of remote or underserved communities who have intermittent or costly access to healthcare facilities and want preliminary guidance before traveling or booking teleconsults.
+
+Secondary users / stakeholders:
+
+Campus health centers, primary health centers, community clinics, and telemedicine providers (who may receive pre-triaged cases).
+
+NGO workers, community health volunteers, and nurses using a simple dashboard to review flagged (higher-risk) cases (human-in-the-loop).
+
+Administrators and decision-makers evaluating the tool for deployment and impact.
+
+1.6 Scope
+1.6.1 Prototype Scope (Hackathon)
+
+Web-based application (desktop + mobile web) with:
+
+User-facing chat-like symptom reporting interface.
+
+A guided question flow for selected symptom groups.
+
+A triage outcome presented as a risk band:
+
+Green: self-care guidance.
+
+Yellow: recommended non-emergency teleconsult/clinic visit.
+
+Red: suggested urgent/emergency evaluation.
+
+Non-diagnostic, explanatory text generated via constrained AI (LLM) based on internal rules/logic.
+
+Limited symptom coverage:
+
+Fever + cough (possible infection / flu-like scenarios).
+
+Chest discomfort + breathlessness (potentially serious scenarios).
+
+Diarrhoea/vomiting (common acute conditions).
+
+Headache (non-specific but frequent complaint).
+
+Basic admin/clinician dashboard (web) to view Red/Yellow flagged cases and mark them as reviewed (no full EMR integration).
+
+Basic logging of interactions (anonymized or pseudonymized) for quality monitoring (within hackathon constraints).
+
+Deployed as a minimal cloud prototype (frontend + backend), with optional demonstration of local model inference on AMD hardware if available (e.g., lightweight model via ONNX Runtime).
+
+1.6.2 Future Scope (Beyond Hackathon)
+
+Broader symptom coverage and structured questionnaires for more conditions.
+
+Deeper integration with existing telemedicine platforms, hospital systems, and electronic health records.
+
+Expanded language support, voice-first interaction, and offline/low-bandwidth modes.
+
+More advanced AI models, including fine-tuned classifiers and on-device models optimized for AMD accelerators.
+
+Formal clinical evaluation, regulatory considerations, and detailed safety documentation.
+
+1.7 Explicit Separation: Verified Facts vs Design Assumptions
+Any references to telemedicine effectiveness, rural access challenges, and existing symptom checker/triage tools are drawn from published literature and product descriptions.
+
+All described architecture, stack choices, user flows, feature lists, and triage categories for this prototype are design decisions and assumptions for the purpose of building a realistic but limited hackathon prototype; they are not claimed as validated clinical or commercial performance.
+
+2.0 Existing Solutions Analysis
+2.1 Categories of Current Solutions
+Verified categories:
+
+Telehealth / telemedicine platforms that offer video/voice consultations and remote follow-up for patients in rural and urban settings.
+
+Symptom checkers and virtual triage tools that gather symptoms via chat-like or form-based interfaces and provide triage recommendations (e.g., emergency, appointment, self-care).
+
+Electronic symptom assessment tools based on structured question flows and algorithms, some clinically validated for safety in real-world primary care environments.
+​
+
+2.2 Commonly Used Features (Descriptive, Non-comparative)
+From public descriptions and literature:
+
+Interactive symptom questionnaires with follow-up questions tailored to user answers.
+
+Triage recommendations such as:
+
+Self-care at home.
+
+Book a primary care appointment or teleconsultation.
+
+Go to emergency or urgent care now.
+
+Educational information explaining possible causes in user-friendly language.
+
+Integration with telemedicine booking or provider directories.
+
+2.3 Known Limitations or Gaps (From Literature and Practice)
+Rural and underserved users can face obstacles like limited broadband, device access, and tech literacy, which makes adoption of advanced telehealth solutions difficult.
+
+Safety and accuracy of AI or electronic symptom checkers can vary; triage systems must be evaluated to avoid under-triaging emergencies or overloading services with unnecessary visits.
+
+Some AI-driven triage systems raise concerns around transparency, accountability, bias, and regulatory classification as medical devices, requiring careful risk management.
+
+2.4 Opportunities for Innovation
+Derived from the above, without performance claims:
+
+Provide non-diagnostic guidance with clear guardrails and human oversight to reduce risk and build trust.
+
+Design for low-bandwidth, mobile-first contexts and progressive enhancement for higher bandwidth.
+
+Offer multilingual and accessibility-conscious user experience tailored to local contexts.
+
+Integrate with existing telemedicine offerings and community health workflows instead of operating in isolation.
+
+2.5 How This Prototype Differentiates Itself
+Design assumptions for differentiation:
+
+India/campus/community-specific context: Initial targeting of campus and nearby communities, with flows tailored to common local use cases.
+
+Human-in-the-loop by default: Dashboard for flagged cases, with explicit design for manual review of Red (and optionally Yellow) cases.
+
+Guardrail-first AI design: Triage outcome is primarily driven by rule-based logic; AI is used for NLU and explanation rather than making uncontrolled clinical decisions.
+
+AMD-aware architecture: Explicit design consideration for running models on AMD hardware (Ryzen AI, EPYC/Instinct with ROCm), even if initial implementation is cloud API-based.
+
+3.0 Functional Requirements
+3.1 High-Level Feature List
+FR-1: User Registration (Optional for Prototype)
+
+The system MAY support basic user registration using email or phone number; for hackathon scope, anonymous or session-only users are acceptable.
+
+FR-2: Symptom Intake (Text Input)
+
+The system SHALL allow users to enter their primary symptom description as free text in a chat-like interface.
+
+FR-3: Guided Question Flow
+
+The system SHALL ask follow-up questions based on initial symptoms for supported complaint categories (fever/cough, chest discomfort/breathlessness, diarrhoea/vomiting, headache).
+
+FR-4: Triage Decision (Risk Banding)
+
+The system SHALL compute a triage outcome as one of: Green (self-care), Yellow (consult doctor/teleconsult non-urgent), or Red (seek urgent/emergency care).
+
+FR-5: Guidance Explanation
+
+The system SHALL provide user-friendly, non-diagnostic explanation text that:
+
+Summarizes the user’s symptoms.
+
+Explains the triage outcome in simple language.
+
+Suggests next steps and safety-net advice (e.g., “if X happens, seek care immediately”).
+
+FR-6: Multilingual Support (Prototype Level)
+
+The system SHALL support at least English UI and content.
+
+The system SHOULD support at least one additional Indian language for:
+
+UI labels.
+
+Triage outcome explanations (even if partial).
+
+FR-7: Human Review Dashboard (Basic)
+
+The system SHALL expose a simple web dashboard for authorized reviewers (e.g., nurse/volunteer) to:
+
+View a list of recent Red and Yellow cases.
+
+See summarized symptom data and triage outcome.
+
+Mark cases as “Reviewed” with a note.
+
+FR-8: Logging and Audit Trail (Prototype-Level)
+
+The system SHALL log interactions (e.g., timestamp, triage band, high-level symptom category) in a database with anonymized or minimal personal identifiers.
+
+FR-9: Error and Safety Messaging
+
+The system SHALL display clear messages when:
+
+It cannot process input.
+
+Symptoms are outside its supported scope.
+
+Users mention clear emergency keywords (e.g., “unconscious”, “severe bleeding”)—in which case it SHALL default to a Red / emergency guidance response.
+
+FR-10: System Configuration
+
+The system SHALL externalize triage rules (e.g., JSON or similar) so they can be updated without code changes.
+
+3.2 User Stories
+US-1 (Student – self-care decision):
+“As a hostel student with fever and cough, I want to quickly check whether I can rest in my room or need to see a doctor, so that I don’t ignore something serious or waste a trip unnecessarily.”
+
+US-2 (Rural user – travel decision):
+“As a villager living far from a clinic, I want to describe my symptoms and know whether to travel to a health center or wait and monitor at home, so that I can make an informed decision.”
+
+US-3 (Clinician/volunteer – oversight):
+“As a nurse or volunteer, I want to see a queue of high-risk triage cases, so that I can call or follow up with those users and ensure they receive appropriate guidance.”
+
+US-4 (Administrator – monitoring):
+“As a program administrator, I want to see aggregate information about usage and triage outcomes, so that I can understand how the tool is being used and plan deployments.”
+
+3.3 Input/Output Definitions
+3.3.1 Symptom Intake
+
+Input:
+
+primary_complaint (string, 5–512 chars).
+
+Optional: age_range (enum: child, adult, older_adult).
+
+Optional: gender (enum: male, female, other/prefer_not_to_say).
+
+Optional: language (enum: en, <local_language_code>).
+
+Output (from API to frontend):
+
+session_id (UUID string).
+
+followup_questions (array of question objects) or first question object.
+
+3.3.2 Follow-up Question API
+
+Input:
+
+session_id (string).
+
+question_id (string).
+
+answer (string or enum).
+
+Output:
+
+Next question object OR triage_result object if question flow is complete.
+
+3.3.3 Triage Result Object
+
+Fields:
+
+risk_band (enum: GREEN, YELLOW, RED).
+
+reason_codes (list of internal rule identifiers).
+
+summary (short text summary of reported symptoms).
+
+user_message (human-readable guidance text).
+
+recommended_action (enum: SELF_CARE, NON_URGENT_CONSULT, URGENT_CARE).
+
+Optional: followup_recommendations (array of bullet texts).
+
+Optional: disclaimer (standard non-diagnostic message).
+
+3.3.4 Dashboard Data Objects
+
+Triage Case:
+
+case_id, created_at, risk_band, primary_complaint, symptom_summary, age_range, status (NEW, IN_REVIEW, REVIEWED), review_notes.
+
+3.4 System Behavior – Normal and Edge Cases
+Normal flow:
+
+User opens the web app and selects language.
+
+User enters primary complaint.
+
+Backend categorizes complaint into supported groups (or returns “unsupported”).
+
+Backend initiates symptom-specific question tree (4–8 questions).
+
+After last question, rules engine computes risk band.
+
+AI layer generates explanation text based on:
+
+Triage band.
+
+Symptom summary.
+
+Safety-net templates.
+
+Frontend displays triage card with risk band, action, explanation, disclaimer.
+
+If risk band is Yellow or Red, case is logged for dashboard display.
+
+Edge cases:
+
+Nonsensical input (e.g., random characters):
+
+System responds with clarification request; after N attempts, informs user it cannot interpret the input and suggests contacting a healthcare provider directly.
+
+Mention of clear emergency indicators (e.g., “not breathing”, “unconscious”, “severe chest pain”):
+
+System immediately triggers Red band; minimal further questioning; displays emergency instructions and disclaimers.
+
+Symptoms outside supported categories (e.g., dermatology-specific conditions):
+
+System informs user that it cannot provide assessment for those symptoms and suggests contacting a healthcare provider.
+
+AI service unavailable:
+
+System falls back to rule-based triage and displays prewritten, generic messages per risk band; logs incident.
+
+3.5 Error Handling Requirements
+Network/API errors:
+
+User-facing message: “We are facing technical issues. Please try again shortly or contact a healthcare provider directly.”
+
+Log errors with correlation IDs and timestamps.
+
+Validation errors:
+
+System SHALL validate input lengths and types; invalid inputs return structured error responses with reasons.
+
+AI generation failures:
+
+If AI response fails, system SHALL:
+
+Still provide risk band outcome and minimal static guidance text.
+
+Display message that detailed explanation is unavailable.
+
+4.0 Non-Functional Requirements
+4.1 Performance (Prototype-Level)
+Average response time for question/triage API under typical hackathon demo load (up to ~10 concurrent users) SHOULD be under 2 seconds per request, assuming stable network.
+
+The system SHALL be able to handle at least 50 concurrent sessions on the chosen cloud deployment for demo/testing.
+
+No hard real-time guarantees are required; soft real-time behavior is sufficient for demo.
+
+4.2 Security and Privacy Considerations
+For prototype:
+
+Use HTTPS for all frontend-backend and backend-external AI calls (where supported by hosting provider).
+
+Avoid storing personally identifiable information (PII) unless necessary; if stored, minimize (e.g., age range instead of exact age).
+
+Provide a visible disclaimer stating:
+
+The tool does not provide diagnosis.
+
+The tool is not a substitute for a qualified medical professional.
+
+In emergencies, users must contact local emergency services.
+
+Access controls:
+
+Dashboard access SHALL require authentication (even if simple, e.g., password-protected for demo).
+
+Role-based access control MAY be simple (e.g., admin vs reviewer) for prototype.
+
+4.3 Accessibility
+UI SHALL follow basic accessibility principles:
+
+High-contrast color scheme.
+
+Text resizing supported via browser zoom without layout breaking.
+
+Buttons and interactive elements with clear labels and sufficient hit areas.
+
+Screen-reader compatibility SHOULD be ensured for core flows (ARIA labels where appropriate).
+
+Avoid relying solely on color to indicate risk band; also include text labels.
+
+4.4 Scalability Considerations (Design-Level)
+Backend and database SHALL be designed so they can be containerized and scaled horizontally in future (e.g., via Kubernetes or autoscaling groups).
+
+AI model integration SHALL be abstracted behind a service interface, allowing replacement of a cloud LLM with an on-device model or AMD GPU-hosted deployment later.
+
+4.5 Ethical AI Considerations
+The system SHALL:
+
+Clearly label itself as an assistant, not a doctor.
+
+Emphasize that guidance is preliminary and may be inaccurate.
+
+The triage logic SHALL prioritize user safety over convenience (e.g., bias towards more conservative recommendations with clear emergency warnings).
+
+The system SHALL implement basic safeguards to avoid:
+
+Explicit diagnosis (no naming of specific diseases as confirmed).
+
+Prescription of medications.
+
+Bias and fairness:
+
+No differential triage rules by gender, caste, ethnicity, or other protected characteristics; only clinically relevant factors (e.g., age range for risk) are used.
+
+5.0 System Architecture
+5.1 High-Level Architecture
+Components:
+
+Frontend Web Client (React or similar SPA):
+
+Symptom intake interface.
+
+Triage result display.
+
+Reviewer dashboard interface (protected route).
+
+Backend API Service (Node.js/Express or equivalent):
+
+REST API endpoints for:
+
+Session creation.
+
+Question flow progression.
+
+Triage computation.
+
+Dashboard data retrieval.
+
+Integration with:
+
+Rules engine module.
+
+AI text generation / NLU module.
+
+Database.
+
+Rules Engine Module:
+
+Encodes triage decision trees for supported symptom categories.
+
+Reads configuration from JSON or similar data files.
+
+AI/NLU Module:
+
+Wraps external LLM API or local model.
+
+Functions:
+
+Symptom text normalization and summarization.
+
+Friendly explanation text generation constrained to safe templates.
+
+Database:
+
+Stores triage sessions, question/answer logs, and case metadata.
+
+Authentication and Authorization:
+
+Lightweight auth for dashboard (e.g., JWT or session-based).
+
+Deployment Environment:
+
+Cloud hosting (e.g., Vercel for frontend, Render/Railway for backend).
+
+Optional demonstration of local model inference on AMD hardware.
+
+5.2 Component Breakdown
+frontend/
+
+SymptomChatView
+
+FollowupQuestionView
+
+TriageResultView
+
+ReviewerDashboardView
+
+AuthLoginView
+
+backend/
+
+routes/triageRoute.ts
+
+routes/dashboardRoute.ts
+
+controllers/triageController.ts
+
+services/rulesEngine.ts
+
+services/aiService.ts
+
+models/TriageSession.ts
+
+models/CaseReview.ts
+
+5.3 Data Flow (Textual Description)
+User opens the web app; frontend loads configuration (languages, disclaimers).
+
+User submits primary complaint → frontend sends POST /api/triage/start.
+
+Backend:
+
+Creates TriageSession record.
+
+Uses NLU (if needed) to categorize or simply uses keyword-based mapping.
+
+Loads relevant question tree.
+
+Returns first question.
+
+For each answer, frontend sends POST /api/triage/answer.
+
+Backend:
+
+Updates session with answer.
+
+Determines next question or computes final triage outcome through rulesEngine.
+
+When final outcome reached:
+
+Calls aiService to generate explanation text.
+
+Stores final case record (with risk band).
+
+Frontend displays triage card.
+
+Dashboard:
+
+Reviewer logs in → frontend sends GET /api/dashboard/cases.
+
+Backend returns list of cases (filtered by risk band, time, status).
+
+Reviewer can mark case as reviewed via POST /api/dashboard/cases/{id}/review.
+
+5.4 APIs and Integrations
+Internal REST APIs (backend):
+
+POST /api/triage/start
+
+POST /api/triage/answer
+
+GET /api/dashboard/cases
+
+POST /api/dashboard/cases/{id}/review
+
+External integration (optional for prototype):
+
+LLM provider REST API (for text generation); implemented via aiService.ts.
+
+No direct integration with EHR/telemedicine platforms in prototype; placeholders MAY be defined (e.g., field telehealth_link) for future use.
+
+5.5 Model Selection Rationale
+For hackathon prototype:
+
+Use a general-purpose LLM via API for:
+
+Summarizing symptoms into human-readable form.
+
+Generating explanatory texts and safety-net language.
+
+Keep triage decision primarily rules-based to avoid over-reliance on unvalidated AI decisions, aligning with concerns about safety and diagnostic risk in AI triage literature.
+
+Future:
+
+Consider training a lightweight classifier on de-identified data to predict risk bands; deploy on AMD accelerators (e.g., via ROCm) for performance and cost efficiency.
+
+5.6 Deployment Architecture (Prototype)
+Frontend:
+
+Deployed as static assets or SPA on a managed hosting solution.
+
+Backend:
+
+Single container or process running Node.js service.
+
+Database:
+
+Managed database instance (e.g., MongoDB Atlas or cloud Postgres) with basic firewall rules.
+
+AMD Considerations (Design-Level):
+
+Code should be compatible with future migration to:
+
+On-device inference using AMD Ryzen AI for low-latency, private triage logic.
+
+Centralized inference on AMD GPU servers (EPYC + Instinct + ROCm) for heavier models.
+
+6.0 Technology Stack
+6.1 Frontend
+Framework: React (with TypeScript).
+
+Styling: Tailwind CSS or equivalent utility-first framework.
+
+Rationale: Familiar, component-based, rapid UI development; TypeScript for type safety.
+
+6.2 Backend
+Framework: Node.js with Express (TypeScript).
+
+Rationale: Fast prototyping, good ecosystem, JSON-native communication with frontend.
+
+6.3 Database
+Choice: MongoDB or PostgreSQL (either acceptable; exact choice can be decided during implementation).
+
+Rationale:
+
+Document model (MongoDB) naturally matches JSON-based session and Q&A logs.
+
+Relational model (Postgres) offers strong consistency and structured analytics.
+
+For hackathon, choose the one that the team can implement fastest.
+
+6.4 AI/ML Libraries or APIs
+External LLM API provider (e.g., OpenAI, Gemini, etc.) via HTTPS.
+
+ONNX Runtime (optionally) for small local models if AMD hardware is available for demo.
+
+Rationale: External LLM reduces time to implement custom text generation; ONNX Runtime compatible with AMD hardware for future optimization.
+
+6.5 DevOps / Deployment
+GitHub repository for version control.
+
+CI/CD optional for hackathon; basic GitHub Actions MAY be configured to run lint/test.
+
+Hosting:
+
+Frontend: Vercel or Netlify.
+
+Backend: Render, Railway, or similar.
+
+7.0 Detailed UI/UX Specifications
+7.1 Screen Overview
+Landing / Language Selection Screen
+
+Symptom Input Screen
+
+Follow-up Questions Screen
+
+Triage Result Screen
+
+Login Screen (for reviewers)
+
+Reviewer Dashboard Screen
+
+Case Detail Screen (Reviewer)
+
+7.2 Layout Structures
+Common layout:
+
+Top bar:
+
+App logo/name (“SwasthyaPath”).
+
+Language selector dropdown.
+
+Help/Info link (opens modal with disclaimer, emergency notice).
+
+Main content area:
+
+Centered card or chat pane.
+
+Footer:
+
+Short disclaimer text.
+
+7.2.1 Landing / Language Selection
+
+Main elements:
+
+Title text.
+
+Short description of what the assistant does (non-diagnostic).
+
+Language selection buttons (e.g., English, <local language>).
+
+“Get Started” button.
+
+7.2.2 Symptom Input Screen
+
+Layout:
+
+Left (or center): chat-style panel with:
+
+System message: welcome and short instruction.
+
+Input field: multiline text, “Describe what you are feeling”.
+
+Submit button.
+
+Optional small info panel with examples (e.g., “I have had a fever and cough for 2 days”).
+
+7.2.3 Follow-up Questions Screen
+
+Same chat panel layout:
+
+Each question appears as a “message bubble” from system.
+
+Possible answer types:
+
+Buttons (Yes/No).
+
+Radio options for severity (“mild”, “moderate”, “severe”).
+
+Short text input for duration (e.g., “2 days”).
+
+“Next” button disabled until an answer is selected/entered.
+
+7.2.4 Triage Result Screen
+
+Card with:
+
+Risk band indicator:
+
+Color bar + text: e.g., “Red – Urgent Attention Recommended”.
+
+Summary text:
+
+“Based on the information you provided…”
+
+Recommended next action:
+
+E.g., “Please seek emergency care as soon as possible.”
+
+Safety-net reminders:
+
+Bulleted list: what to watch for, when to escalate.
+
+Persistent disclaimer.
+
+7.2.5 Login Screen (Reviewer)
+
+Simple form:
+
+Email/username field.
+
+Password field.
+
+Login button.
+
+Error display for invalid credentials.
+
+7.2.6 Reviewer Dashboard Screen
+
+Table or list view:
+
+Columns: Case ID, Time, Risk Band, Primary Complaint snippet, Status, Actions.
+
+Filter options: by risk band, time range, status.
+
+Clicking a row opens Case Detail.
+
+7.2.7 Case Detail Screen
+
+Displays:
+
+Full symptom summary.
+
+Question-answer timeline.
+
+Triage outcome and reasons.
+
+Text area for reviewer notes.
+
+Buttons: “Mark as Reviewed”, “Back to List”.
+
+7.3 Field-Level Descriptions
+For each input field:
+
+primary_complaint: required; minimum length 5 chars; maximum 512.
+
+Follow-up fields:
+
+Severity: required; values enumerated.
+
+Duration: required; pattern (e.g., integer + unit).
+
+Validation messages:
+
+Clear, inline, e.g., “Please describe your symptoms in at least a few words.”
+
+7.4 User Flow Diagrams (Textual)
+User Flow 1: Symptom to Triage
+
+User opens app → selects language → clicks “Get Started”.
+
+User reads intro, types symptoms, clicks “Next”.
+
+System asks first follow-up question → user answers.
+
+Repeat until question tree completed.
+
+System displays triage card and recommendations.
+
+User can:
+
+End session.
+
+Start a new assessment.
+
+User Flow 2: Reviewer Triage Oversight
+
+Reviewer visits dashboard URL.
+
+Reviewer logs in.
+
+System displays list of recent Red and Yellow cases.
+
+Reviewer clicks a case to view details.
+
+Reviewer reads case, may contact user through external channel (not in prototype).
+
+Reviewer enters notes and marks case as Reviewed.
+
+7.5 Accessibility Considerations
+Ensure focus indicators for keyboard navigation.
+
+Avoid flashing or rapidly changing UI.
+
+Provide descriptive alt text for icons.
+
+Use simple language and short sentences in UI texts.
+
+8.0 Prototype Build Plan
+8.1 Step-by-Step Development Roadmap
+Setup
+
+Initialize GitHub repository with frontend and backend folders.
+
+Configure basic CI (optional) and environment variable templates.
+
+Backend Core
+
+Implement TriageSession model and simple in-memory or DB store.
+
+Implement rulesEngine with hardcoded JSON rules for selected symptoms.
+
+Implement /api/triage/start and /api/triage/answer without AI integration.
+
+Frontend Core
+
+Build basic React app with routing and layout.
+
+Implement Symptom Input and Follow-up Questions screens.
+
+Integrate with backend triage API.
+
+Triage Result and Dashboard
+
+Implement Triage Result screen and mapping of risk bands to UI.
+
+Implement Reviewer Login, Dashboard, and Case Detail screens.
+
+Implement backend routes for dashboard listing and review.
+
+AI Layer Integration
+
+Implement aiService wrapper for LLM API calls.
+
+Integrate AI-based text generation into triage completion path.
+
+Add fallbacks for AI failure.
+
+Localization and Accessibility
+
+Add language selector; introduce simple i18n bundle for labels.
+
+Ensure contrast and keyboard accessibility for main flows.
+
+Deployment
+
+Deploy backend and frontend to selected cloud providers.
+
+Configure environment variables for production/demo.
+
+8.2 MVP Definition
+Implemented and deployed:
+
+Symptom intake and question flow for at least 2 symptom categories.
+
+Rules-based triage with risk bands.
+
+Basic AI-generated explanation text.
+
+Minimal reviewer dashboard listing Red cases and allowing review marking.
+
+This MVP is sufficient for hackathon demo and initial validation.
+
+8.3 Feature Prioritization
+Must-have (MVP):
+
+Symptom input, question flow, rules-based triage, result screen, basic dashboard.
+
+Should-have (if time):
+
+AI-based explanation text.
+
+Simple login for reviewers.
+
+Basic localization to one additional language.
+
+Could-have (stretch):
+
+More symptom categories.
+
+Analytics summary page.
+
+Partial voice input support via browser APIs.
+
+8.4 Modular Implementation Guidance (for AI IDE)
+Implement modules as separate files with clear interfaces:
+
+rulesEngine.evaluate(sessionAnswers) → riskBand + reasonCodes.
+
+aiService.generateExplanation(input: { summary, riskBand }) → userMessage.
+
+Ensure no circular dependencies between routes, controllers, services, and models.
+
+Keep configuration (rules, prompt templates, disclaimers) in separate JSON/Markdown files for easy adjustment.
+
+9.0 Testing Plan
+9.1 Unit Testing
+rulesEngine:
+
+Test each symptom category’s decision tree for:
+
+Expected Green, Yellow, Red outputs for known answer patterns.
+
+Handling of missing or inconsistent answers.
+
+aiService:
+
+Mock API responses; test that prompts are constructed correctly and safe constraints are included.
+
+Controllers:
+
+Test validation of incoming payloads and error responses.
+
+9.2 Integration Testing
+Backend:
+
+Simulate full triage sessions via API (start → multiple answers → triage completion).
+
+Ensure session state is correctly persisted.
+
+Frontend + Backend:
+
+End-to-end flow using a test environment:
+
+Enter symptom, answer questions, receive triage result.
+
+9.3 End-to-End User Testing Scenarios
+Scenario 1: Mild fever and cough → expect Green or Yellow depending on rules.
+
+Scenario 2: Chest pain with breathlessness → expect Red.
+
+Scenario 3: Unsupported symptom description → expect “unsupported” message.
+
+Scenario 4: AI failure (simulate by disabling AI service) → ensure user still receives risk band and static guidance.
+
+9.4 Edge Case Handling
+Empty or very short symptom descriptions.
+
+Contradictory answers (e.g., “no chest pain” then “severe chest pain”).
+
+Repeated use of Back/Reload in the browser.
+
+Loss of connectivity mid-session.
+
+9.5 Failure Scenarios
+Backend down or unreachable:
+
+Frontend shows “service unavailable” message with suggestion to contact provider directly.
+
+Database unavailable:
+
+Backend returns standardized error; triage session creation fails gracefully.
+
+Authentication failures:
+
+Dashboard access denied with appropriate message.
+
+9.6 Manual Validation Checklist
+All screens render correctly on mobile and desktop.
+
+Language toggle changes labels and key messages (where implemented).
+
+Triage decisions match expected outcomes for hand-designed test cases.
+
+Disclaimers are visible on all relevant screens.
+
+Emergency keywords always produce conservative guidance.
+
+9.7 Acceptance Criteria Mapping
+All functional requirements in Section 3.0 have at least one corresponding test scenario.
+
+Non-functional requirements (security, accessibility basics, performance) are verified at least once manually.
+
+MVP features (Section 8.2) are fully implemented and demonstrable in live environment.
+
+10.0 Impact & Alignment
+10.1 Addressing the Problem Statement
+The system allows users to describe symptoms in natural language, receive an early assessment via triage band, and obtain suggested next steps (self-care, non-urgent consult, or urgent care), directly meeting the example task in the PS.
+
+By focusing on early-stage guidance and clear disclaimers, the platform supports better navigation to appropriate care settings while avoiding diagnostic claims, consistent with current virtual triage practices.
+
+10.2 Measurable Impact Indicators (No Fabricated Stats)
+Potential indicators (defined qualitatively, not numerically for now):
+
+Number of completed triage sessions over a period.
+
+Distribution of triage outcomes (Green/Yellow/Red) to understand how users are using the tool.
+
+Percentage of users who report:
+
+Better understanding of when to seek care.
+
+Reduced uncertainty or anxiety about their symptoms (to be collected via optional surveys).
+
+For deployments integrated with telehealth providers:
+
+Proportion of cases appropriately routed to self-care vs teleconsultation vs emergency services (to be evaluated in future studies).
+
+10.3 Ethical and Societal Implications
+Positive:
+
+Increased access to preliminary guidance for populations with healthcare access challenges.
+
+Reduced decision paralysis and potential reduction in unnecessary physical visits for minor conditions.
+
+Risks:
+
+Misinterpretation of guidance, especially if users treat it as diagnostic.
+
+Under-triage or over-triage; therefore, conservative rules and clear safety messages are used and human review is included.
+
+11.0 Future Enhancements
+11.1 Advanced AI Improvements
+Train domain-specific models for triage risk prediction, evaluated against clinical data sets.
+
+Incorporate multimodal inputs (e.g., vital sign readings where available) for better grounding.
+
+Implement continuous monitoring and re-training pipelines following safety checklists for AI-assisted triage deployment.
+
+11.2 Scalability Roadmap
+Horizontal scaling of backend/API with container orchestration.
+
+Multi-region deployments close to user bases.
+
+On-device inference for core triage logic on AMD Ryzen AI hardware, with central logging / analytics.
+
+11.3 Potential Integrations
+Telemedicine booking systems (via APIs).
+
+Hospital/clinic EMRs (where permitted).
+
+Messaging platforms (e.g., WhatsApp bots) as alternate interaction channels.
+
+NGO/PHC data platforms for community health initiatives.
+
+12.0 Glossary (Optional)
+Triage: Process of determining the urgency and type of care needed based on symptoms.
+
+Self-care: Managing symptoms at home with general advice, without seeing a clinician immediately.
+
+Teleconsultation: Remote consultation via phone, video, or chat with a healthcare provider.
+
+Risk band: Category (Green/Yellow/Red) describing urgency level used in this system.
+
+AI/LLM: Artificial Intelligence / Large Language Model used for natural language understanding and text generation.
+
+This SRS is designed to be implementation-ready for a hackathon prototype: it defines clear functional behavior, technical stack, interfaces, and constraints, and separates verified context from design assumptions for this specific project.

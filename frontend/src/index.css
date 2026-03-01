@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global styles */
+:root {
+  --font-sans: 'Inter', 'Noto Sans Devanagari', 'Noto Sans Tamil', sans-serif;
+}
+
+body {
+  @apply font-sans bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 text-slate-800 min-h-screen antialiased;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-400;
+}
+
+/* Focus visible styles for accessibility */
+*:focus-visible {
+  @apply outline-2 outline-offset-2 outline-primary-500;
+}
+
+/* Smooth transitions for all interactive elements */
+button, a, input, select, textarea {
+  @apply transition-all duration-200 ease-in-out;
+}
+
+/* Chat bubble animations */
+.chat-bubble-enter {
+  animation: bubbleIn 0.3s ease-out;
+}
+
+@keyframes bubbleIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Glassmorphism card */
+.glass-card {
+  @apply bg-white/80 backdrop-blur-lg border border-white/20 shadow-xl rounded-2xl;
+}
+
+/* Risk band glow effects */
+.risk-green {
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
+}
+.risk-yellow {
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.2);
+}
+.risk-red {
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+}

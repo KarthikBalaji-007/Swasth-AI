@@ -1,0 +1,51 @@
+// backend/src/config/disclaimers.json
+// Centralized disclaimer and safety-net text — externalized for easy updates
+{
+    "mainDisclaimer": {
+        "en": "⚠️ This tool does NOT provide medical diagnosis. It offers preliminary guidance only. Always consult a qualified healthcare professional for medical advice. In emergencies, contact local emergency services immediately.",
+        "hi": "⚠️ यह उपकरण चिकित्सा निदान प्रदान नहीं करता। यह केवल प्रारंभिक मार्गदर्शन प्रदान करता है। चिकित्सा सलाह के लिए हमेशा योग्य स्वास्थ्य पेशेवर से परामर्श करें। आपातकाल में, तुरंत स्थानीय आपातकालीन सेवाओं से संपर्क करें।",
+        "ta": "⚠️ இந்த கருவி மருத்துவ நோயறிதலை வழங்காது. இது ஆரம்பக் கட்ட வழிகாட்டுதலை மட்டுமே வழங்குகிறது. மருத்துவ ஆலோசனைக்கு எப்போதும் தகுதிவாய்ந்த மருத்துவரை அணுகவும். அவசர நிலையில், உடனடியாக அவசர சேவைகளை தொடர்பு கொள்ளவும்."
+    },
+    "emergencyMessage": {
+        "en": "🚨 EMERGENCY: Based on the symptoms you described, this could be a serious medical emergency. Please call emergency services (112) or go to the nearest emergency room IMMEDIATELY. Do not delay seeking help.",
+        "hi": "🚨 आपातकाल: आपके द्वारा बताए गए लक्षणों के आधार पर, यह एक गंभीर चिकित्सा आपातकाल हो सकता है। कृपया तुरंत आपातकालीन सेवाओं (112) को कॉल करें या निकटतम आपातकालीन कक्ष में जाएं।",
+        "ta": "🚨 அவசரநிலை: நீங்கள் விவரித்த அறிகுறிகளின் அடிப்படையில், இது ஒரு தீவிர மருத்துவ அவசரநிலையாக இருக்கலாம். உடனடியாக அவசர சேவைகளை (112) அழைக்கவும் அல்லது அருகிலுள்ள அவசர சிகிச்சை அறைக்கு செல்லவும்."
+    },
+    "safetyNet": {
+        "en": [
+            "If your symptoms worsen or new symptoms develop, seek medical attention immediately.",
+            "If you experience difficulty breathing, chest pain, confusion, or loss of consciousness, call emergency services (112).",
+            "This guidance is based on limited information and may not capture your full health picture.",
+            "When in doubt, always choose to see a healthcare professional."
+        ],
+        "hi": [
+            "यदि आपके लक्षण बिगड़ते हैं या नए लक्षण विकसित होते हैं, तो तुरंत चिकित्सा सहायता लें।",
+            "यदि आपको सांस लेने में कठिनाई, सीने में दर्द, भ्रम या बेहोशी का अनुभव हो, तो आपातकालीन सेवाओं (112) को कॉल करें।",
+            "यह मार्गदर्शन सीमित जानकारी पर आधारित है।",
+            "संदेह होने पर, हमेशा स्वास्थ्य पेशेवर से मिलें।"
+        ],
+        "ta": [
+            "உங்கள் அறிகுறிகள் மோசமடைந்தால் அல்லது புதிய அறிகுறிகள் தோன்றினால், உடனடியாக மருத்துவ உதவியை நாடுங்கள்.",
+            "மூச்சுத்திணறல், நெஞ்சுவலி, குழப்பம் அல்லது மயக்கம் ஏற்பட்டால், அவசர சேவைகளை (112) அழைக்கவும்.",
+            "இந்த வழிகாட்டுதல் வரையறுக்கப்பட்ட தகவலின் அடிப்படையில் அமைந்தது.",
+            "சந்தேகம் இருந்தால், எப்போதும் மருத்துவரை அணுகவும்."
+        ]
+    },
+    "fallbackMessages": {
+        "GREEN": {
+            "en": "Based on the information provided, your symptoms appear to be manageable at home with self-care. Rest, stay hydrated, and monitor your symptoms. If they worsen, please consult a healthcare provider.",
+            "hi": "दी गई जानकारी के आधार पर, आपके लक्षण घर पर स्व-देखभाल से प्रबंधनीय प्रतीत होते हैं। आराम करें, पर्याप्त पानी पिएं और अपने लक्षणों पर नज़र रखें।",
+            "ta": "கொடுக்கப்பட்ட தகவலின் அடிப்படையில், உங்கள் அறிகுறிகள் சுய பராமரிப்புடன் வீட்டில் நிர்வகிக்கக்கூடியவை. ஓய்வெடுங்கள், நீரேற்றமாக இருங்கள், அறிகுறிகளை கவனியுங்கள்."
+        },
+        "YELLOW": {
+            "en": "Based on the information provided, we recommend consulting a healthcare provider or booking a teleconsultation within the next 24-48 hours. This is not an emergency, but professional evaluation would be beneficial.",
+            "hi": "दी गई जानकारी के आधार पर, हम अगले 24-48 घंटों में किसी स्वास्थ्य सेवा प्रदाता से परामर्श या टेलीकंसल्टेशन बुक करने की सलाह देते हैं।",
+            "ta": "கொடுக்கப்பட்ட தகவலின் அடிப்படையில், அடுத்த 24-48 மணி நேரத்தில் மருத்துவரை அணுகவும் அல்லது தொலைநிலை ஆலோசனையை பதிவு செய்யவும்."
+        },
+        "RED": {
+            "en": "Based on the information provided, your symptoms may require urgent medical attention. Please visit the nearest emergency room or call emergency services (112) as soon as possible.",
+            "hi": "दी गई जानकारी के आधार पर, आपके लक्षणों को तत्काल चिकित्सा ध्यान की आवश्यकता हो सकती है। कृपया निकटतम आपातकालीन कक्ष में जाएं या 112 पर कॉल करें।",
+            "ta": "கொடுக்கப்பட்ட தகவலின் அடிப்படையில், உங்கள் அறிகுறிகளுக்கு அவசர மருத்துவ கவனிப்பு தேவைப்படலாம். உடனடியாக அருகிலுள்ள அவசர சிகிச்சை அறைக்கு செல்லவும் அல்லது 112 அழைக்கவும்."
+        }
+    }
+}

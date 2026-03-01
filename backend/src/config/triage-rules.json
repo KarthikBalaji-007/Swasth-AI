@@ -1,0 +1,800 @@
+{
+    "emergencyKeywords": [
+        "unconscious",
+        "not breathing",
+        "severe bleeding",
+        "heart attack",
+        "stroke",
+        "seizure",
+        "choking",
+        "chest pain severe",
+        "collapsed",
+        "unresponsive",
+        "convulsion",
+        "suicide",
+        "overdose",
+        "poisoning",
+        "severe burn",
+        "cannot breathe",
+        "blacking out",
+        "fainting repeatedly"
+    ],
+    "categories": {
+        "fever_cough": {
+            "name": {
+                "en": "Fever & Cough",
+                "hi": "बुखार और खांसी",
+                "ta": "காய்ச்சல் & இருமல்"
+            },
+            "keywords": [
+                "fever",
+                "cough",
+                "cold",
+                "flu",
+                "temperature",
+                "chills",
+                "sore throat",
+                "runny nose",
+                "sneezing",
+                "bukhar",
+                "khansi",
+                "kaichal",
+                "irumal"
+            ],
+            "questions": [
+                {
+                    "id": "fc_q1",
+                    "text": {
+                        "en": "How high is your fever?",
+                        "hi": "आपका बुखार कितना है?",
+                        "ta": "உங்கள் காய்ச்சல் எவ்வளவு?"
+                    },
+                    "type": "choice",
+                    "options": [
+                        {
+                            "value": "mild",
+                            "label": {
+                                "en": "Mild (below 100°F / 38°C)",
+                                "hi": "हल्का (100°F / 38°C से कम)",
+                                "ta": "லேசான (100°F / 38°C கீழ்)"
+                            },
+                            "score": 1
+                        },
+                        {
+                            "value": "moderate",
+                            "label": {
+                                "en": "Moderate (100-102°F / 38-39°C)",
+                                "hi": "मध्यम (100-102°F / 38-39°C)",
+                                "ta": "மிதமான (100-102°F / 38-39°C)"
+                            },
+                            "score": 2
+                        },
+                        {
+                            "value": "high",
+                            "label": {
+                                "en": "High (above 102°F / 39°C)",
+                                "hi": "तेज (102°F / 39°C से ऊपर)",
+                                "ta": "அதிகம் (102°F / 39°C மேல்)"
+                            },
+                            "score": 3
+                        },
+                        {
+                            "value": "unknown",
+                            "label": {
+                                "en": "I don't know / No thermometer",
+                                "hi": "मुझे नहीं पता / थर्मामीटर नहीं है",
+                                "ta": "எனக்கு தெரியாது / வெப்பமானி இல்லை"
+                            },
+                            "score": 2
+                        }
+                    ]
+                },
+                {
+                    "id": "fc_q2",
+                    "text": {
+                        "en": "How long have you had these symptoms?",
+                        "hi": "ये लक्षण कितने समय से हैं?",
+                        "ta": "இந்த அறிகுறிகள் எவ்வளவு நாட்களாக உள்ளன?"
+                    },
+                    "type": "choice",
+                    "options": [
+                        {
+                            "value": "1-2days",
+                            "label": {
+                                "en": "1-2 days",
+                                "hi": "1-2 दिन",
+                                "ta": "1-2 நாட்கள்"
+                            },
+                            "score": 1
+                        },
+                        {
+                            "value": "3-5days",
+                            "label": {
+                                "en": "3-5 days",
+                                "hi": "3-5 दिन",
+                                "ta": "3-5 நாட்கள்"
+                            },
+                            "score": 2
+                        },
+                        {
+                            "value": "over5days",
+                            "label": {
+                                "en": "More than 5 days",
+                                "hi": "5 दिन से अधिक",
+                                "ta": "5 நாட்களுக்கு மேல்"
+                            },
+                            "score": 3
+                        }
+                    ]
+                },
+                {
+                    "id": "fc_q3",
+                    "text": {
+                        "en": "Are you experiencing any difficulty breathing?",
+                        "hi": "क्या आपको सांस लेने में कोई कठिनाई हो रही है?",
+                        "ta": "உங்களுக்கு மூச்சு விடுவதில் சிரமம் உள்ளதா?"
+                    },
+                    "type": "choice",
+                    "options": [
+                        {
+                            "value": "no",
+                            "label": {
+                                "en": "No",
+                                "hi": "नहीं",
+                                "ta": "இல்லை"
+                            },
+                            "score": 0
+                        },
+                        {
+                            "value": "mild",
+                            "label": {
+                                "en": "Slight difficulty",
+                                "hi": "थोड़ी कठिनाई",
+                                "ta": "சிறிது சிரமம்"
+                            },
+                            "score": 2
+                        },
+                        {
+                            "value": "severe",
+                            "label": {
+                                "en": "Yes, significant difficulty",
+                                "hi": "हाँ, काफी कठिनाई",
+                                "ta": "ஆம், கணிசமான சிரமம்"
+                            },
+                            "score": 4
+                        }
+                    ]
+                },
+                {
+                    "id": "fc_q4",
+                    "text": {
+                        "en": "Do you have any of the following? (Select the most relevant)",
+                        "hi": "क्या आपको निम्नलिखित में से कुछ है? (सबसे प्रासंगिक चुनें)",
+                        "ta": "பின்வருவனவற்றில் ஏதேனும் உள்ளதா? (மிகப் பொருத்தமானதைத் தேர்ந்தெடுக்கவும்)"
+                    },
+                    "type": "choice",
+                    "options": [
+                        {
+                            "value": "none",
+                            "label": {
+                                "en": "None of the below",
+                                "hi": "नीचे में से कोई नहीं",
+                                "ta": "கீழே எதுவும் இல்லை"
+                            },
+                            "score": 0
+                        },
+                        {
+                            "value": "body_aches",
+                            "label": {
+                                "en": "Body aches / headache",
+                                "hi": "शरीर में दर्द / सिरदर्द",
+                                "ta": "உடல் வலி / தலைவலி"
+                            },
+                            "score": 1
+                        },
+                        {
+                            "value": "chest_tightness",
+                            "label": {
+                                "en": "Chest tightness / pain",
+                                "hi": "सीने में जकड़न / दर्द",
+                                "ta": "நெஞ்சு இறுக்கம் / வலி"
+                            },
+                            "score": 3
+                        },
+                        {
+                            "value": "confusion",
+                            "label": {
+                                "en": "Confusion / drowsiness",
+                                "hi": "भ्रम / उनींदापन",
+                                "ta": "குழப்பம் / மயக்கம்"
+                            },
+                            "score": 4
+                        }
+                    ]
+                },
+                {
+                    "id": "fc_q5",
+                    "text": {
+                        "en": "Have you been in contact with anyone diagnosed with a contagious illness recently?",
+                        "hi": "क्या आप हाल ही में किसी संक्रामक बीमारी वाले व्यक्ति के संपर्क में आए हैं?",
+                        "ta": "சமீபத்தில் தொற்று நோய் கண்டறியப்பட்ட யாரிடமாவது நீங்கள் தொடர்பில் இருந்தீர்களா?"
+                    },
+                    "type": "choice",
+                    "options": [
+                        {
+                            "value": "no",
+                            "label": {
+                                "en": "No",
+                                "hi": "नहीं",
+                                "ta": "இல்லை"
+                            },
+                            "score": 0
+                        },
+                        {
+                            "value": "unsure",
+                            "label": {
+                                "en": "Not sure",
+                                "hi": "निश्चित नहीं",
+                                "ta": "உறுதியாகத் தெரியவில்லை"
+                            },
+                            "score": 1
+                        },
+                        {
+                            "value": "yes",
+                            "label": {
+                                "en": "Yes",
+                                "hi": "हाँ",
+                                "ta": "ஆம்"
+                            },
+                            "score": 2
+                        }
+                    ]
+                }
+            ],
+            "thresholds": {
+                "green": 5,
+                "yellow": 9
+            }
+        },
+        "chest_discomfort": {
+            "name": {
+                "en": "Chest Discomfort & Breathlessness",
+                "hi": "सीने में तकलीफ और सांस फूलना",
+                "ta": "நெஞ்சு அசௌகரியம் & மூச்சுத்திணறல்"
+            },
+            "keywords": [
+                "chest pain",
+                "chest discomfort",
+                "heart",
+                "breathless",
+                "breathlessness",
+                "palpitation",
+                "tight chest",
+                "seene me dard",
+                "nenju vali",
+                "moochu"
+            ],
+            "questions": [
+                {
+                    "id": "cd_q1",
+                    "text": {
+                        "en": "How would you describe the chest discomfort?",
+                        "hi": "सीने की तकलीफ कैसी है?",
+                        "ta": "நெஞ்சு அசௌகரியத்தை எப்படி விவரிப்பீர்கள்?"
+                    },
+                    "type": "choice",
+                    "options": [
+                        {
+                            "value": "mild",
+                            "label": {
+                                "en": "Mild / occasional twinge",
+                                "hi": "हल्का / कभी-कभी चुभन",
+                                "ta": "லேசானது / அவ்வப்போது"
+                            },
+                            "score": 1
+                        },
+                        {
+                            "value": "moderate",
+                            "label": {
+                                "en": "Moderate pressure / aching",
+                                "hi": "मध्यम दबाव / दर्द",
+                                "ta": "மிதமான அழுத்தம் / வலி"
+                            },
+                            "score": 3
+                        },
+                        {
+                            "value": "severe",
+                            "label": {
+                                "en": "Severe / crushing / squeezing",
+                                "hi": "गंभीर / कुचलने वाला / निचोड़ने वाला",
+                                "ta": "கடுமையான / நெருக்குவது"
+                            },
+                            "score": 5
+                        }
+                    ]
+                },
+                {
+                    "id": "cd_q2",
+                    "text": {
+                        "en": "Does the pain spread to your arm, jaw, or back?",
+                        "hi": "क्या दर्द आपके हाथ, जबड़े या पीठ में फैलता है?",
+                        "ta": "வலி உங்கள் கை, தாடை அல்லது முதுகுக்கு பரவுகிறதா?"
+                    },
+                    "type": "choice",
+                    "options": [
+                        {
+                            "value": "no",
+                            "label": {
+                                "en": "No",
+                                "hi": "नहीं",
+                                "ta": "இல்லை"
+                            },
+                            "score": 0
+                        },
+                        {
+                            "value": "yes",
+                            "label": {
+                                "en": "Yes",
+                                "hi": "हाँ",
+                                "ta": "ஆம்"
+                            },
+                            "score": 4
+                        }
+                    ]
+                },
+                {
+                    "id": "cd_q3",
+                    "text": {
+                        "en": "Are you sweating, feeling nauseous, or light-headed?",
+                        "hi": "क्या आपको पसीना आ रहा है, मिचली हो रही है या चक्कर आ रहे हैं?",
+                        "ta": "வியர்வை, குமட்டல் அல்லது தலை சுற்றுகிறதா?"
+                    },
+                    "type": "choice",
+                    "options": [
+                        {
+                            "value": "no",
+                            "label": {
+                                "en": "No",
+                                "hi": "नहीं",
+                                "ta": "இல்லை"
+                            },
+                            "score": 0
+                        },
+                        {
+                            "value": "mild",
+                            "label": {
+                                "en": "Mildly",
+                                "hi": "हल्का सा",
+                                "ta": "சிறிதளவு"
+                            },
+                            "score": 2
+                        },
+                        {
+                            "value": "yes",
+                            "label": {
+                                "en": "Yes, noticeably",
+                                "hi": "हाँ, ध्यान देने योग्य",
+                                "ta": "ஆம், கணிசமாக"
+                            },
+                            "score": 4
+                        }
+                    ]
+                },
+                {
+                    "id": "cd_q4",
+                    "text": {
+                        "en": "When did the chest discomfort start?",
+                        "hi": "सीने में तकलीफ कब शुरू हुई?",
+                        "ta": "நெஞ்சு அசௌகரியம் எப்போது தொடங்கியது?"
+                    },
+                    "type": "choice",
+                    "options": [
+                        {
+                            "value": "recently",
+                            "label": {
+                                "en": "In the last few hours",
+                                "hi": "पिछले कुछ घंटों में",
+                                "ta": "கடந்த சில மணி நேரத்தில்"
+                            },
+                            "score": 3
+                        },
+                        {
+                            "value": "today",
+                            "label": {
+                                "en": "Earlier today",
+                                "hi": "आज पहले",
+                                "ta": "இன்று முன்பு"
+                            },
+                            "score": 2
+                        },
+                        {
+                            "value": "days",
+                            "label": {
+                                "en": "A few days ago (recurring)",
+                                "hi": "कुछ दिन पहले (बार-बार होता है)",
+                                "ta": "சில நாட்களுக்கு முன் (திரும்பத்திரும்ப)"
+                            },
+                            "score": 2
+                        }
+                    ]
+                }
+            ],
+            "thresholds": {
+                "green": 4,
+                "yellow": 7
+            }
+        },
+        "diarrhoea_vomiting": {
+            "name": {
+                "en": "Diarrhoea & Vomiting",
+                "hi": "दस्त और उल्टी",
+                "ta": "வயிற்றுப்போக்கு & வாந்தி"
+            },
+            "keywords": [
+                "diarrhea",
+                "diarrhoea",
+                "vomiting",
+                "loose motion",
+                "stomach",
+                "nausea",
+                "dehydration",
+                "food poisoning",
+                "ulti",
+                "dast",
+                "vayiru",
+                "vaanthi"
+            ],
+            "questions": [
+                {
+                    "id": "dv_q1",
+                    "text": {
+                        "en": "How frequent are your episodes (diarrhoea/vomiting)?",
+                        "hi": "आपको कितनी बार दस्त/उल्टी हो रही है?",
+                        "ta": "எத்தனை முறை வயிற்றுப்போக்கு/வாந்தி ஏற்படுகிறது?"
+                    },
+                    "type": "choice",
+                    "options": [
+                        {
+                            "value": "few",
+                            "label": {
+                                "en": "1-3 times today",
+                                "hi": "आज 1-3 बार",
+                                "ta": "இன்று 1-3 முறை"
+                            },
+                            "score": 1
+                        },
+                        {
+                            "value": "moderate",
+                            "label": {
+                                "en": "4-6 times today",
+                                "hi": "आज 4-6 बार",
+                                "ta": "இன்று 4-6 முறை"
+                            },
+                            "score": 2
+                        },
+                        {
+                            "value": "frequent",
+                            "label": {
+                                "en": "More than 6 times today",
+                                "hi": "आज 6 से अधिक बार",
+                                "ta": "இன்று 6 முறைக்கு மேல்"
+                            },
+                            "score": 3
+                        }
+                    ]
+                },
+                {
+                    "id": "dv_q2",
+                    "text": {
+                        "en": "How long has this been going on?",
+                        "hi": "यह कितने समय से हो रहा है?",
+                        "ta": "இது எவ்வளவு நாட்களாக நடக்கிறது?"
+                    },
+                    "type": "choice",
+                    "options": [
+                        {
+                            "value": "today",
+                            "label": {
+                                "en": "Started today",
+                                "hi": "आज शुरू हुआ",
+                                "ta": "இன்று தொடங்கியது"
+                            },
+                            "score": 1
+                        },
+                        {
+                            "value": "1-2days",
+                            "label": {
+                                "en": "1-2 days",
+                                "hi": "1-2 दिन",
+                                "ta": "1-2 நாட்கள்"
+                            },
+                            "score": 2
+                        },
+                        {
+                            "value": "3plus",
+                            "label": {
+                                "en": "3+ days",
+                                "hi": "3+ दिन",
+                                "ta": "3+ நாட்கள்"
+                            },
+                            "score": 3
+                        }
+                    ]
+                },
+                {
+                    "id": "dv_q3",
+                    "text": {
+                        "en": "Is there blood in your stool or vomit?",
+                        "hi": "क्या मल या उल्टी में खून आ रहा है?",
+                        "ta": "மலம் அல்லது வாந்தியில் ரத்தம் உள்ளதா?"
+                    },
+                    "type": "choice",
+                    "options": [
+                        {
+                            "value": "no",
+                            "label": {
+                                "en": "No",
+                                "hi": "नहीं",
+                                "ta": "இல்லை"
+                            },
+                            "score": 0
+                        },
+                        {
+                            "value": "yes",
+                            "label": {
+                                "en": "Yes",
+                                "hi": "हाँ",
+                                "ta": "ஆம்"
+                            },
+                            "score": 4
+                        }
+                    ]
+                },
+                {
+                    "id": "dv_q4",
+                    "text": {
+                        "en": "Are you showing signs of dehydration? (very dry mouth, dizziness, very little/no urination)",
+                        "hi": "क्या आपमें निर्जलीकरण के लक्षण हैं? (बहुत सूखा मुंह, चक्कर, बहुत कम/कोई पेशाब नहीं)",
+                        "ta": "நீரிழப்பு அறிகுறிகள் உள்ளனவா? (மிகவும் வறண்ட வாய், தலைச்சுற்றல், சிறுநீர் மிகக் குறைவு)"
+                    },
+                    "type": "choice",
+                    "options": [
+                        {
+                            "value": "no",
+                            "label": {
+                                "en": "No",
+                                "hi": "नहीं",
+                                "ta": "இல்லை"
+                            },
+                            "score": 0
+                        },
+                        {
+                            "value": "mild",
+                            "label": {
+                                "en": "Slightly",
+                                "hi": "थोड़ा",
+                                "ta": "சிறிதளவு"
+                            },
+                            "score": 2
+                        },
+                        {
+                            "value": "yes",
+                            "label": {
+                                "en": "Yes, noticeably",
+                                "hi": "हाँ, स्पष्ट रूप से",
+                                "ta": "ஆம், தெளிவாக"
+                            },
+                            "score": 4
+                        }
+                    ]
+                }
+            ],
+            "thresholds": {
+                "green": 4,
+                "yellow": 8
+            }
+        },
+        "headache": {
+            "name": {
+                "en": "Headache",
+                "hi": "सिरदर्द",
+                "ta": "தலைவலி"
+            },
+            "keywords": [
+                "headache",
+                "head pain",
+                "migraine",
+                "head hurts",
+                "sirdard",
+                "thalai vali"
+            ],
+            "questions": [
+                {
+                    "id": "ha_q1",
+                    "text": {
+                        "en": "How severe is your headache?",
+                        "hi": "आपका सिरदर्द कितना गंभीर है?",
+                        "ta": "உங்கள் தலைவலி எவ்வளவு தீவிரமானது?"
+                    },
+                    "type": "choice",
+                    "options": [
+                        {
+                            "value": "mild",
+                            "label": {
+                                "en": "Mild — manageable",
+                                "hi": "हल्का — सहनीय",
+                                "ta": "லேசானது — நிர்வகிக்கக்கூடியது"
+                            },
+                            "score": 1
+                        },
+                        {
+                            "value": "moderate",
+                            "label": {
+                                "en": "Moderate — affecting daily activities",
+                                "hi": "मध्यम — दैनिक गतिविधियों पर प्रभाव",
+                                "ta": "மிதமான — தினசரி நடவடிக்கைகளை பாதிக்கிறது"
+                            },
+                            "score": 2
+                        },
+                        {
+                            "value": "severe",
+                            "label": {
+                                "en": "Severe — worst headache of my life",
+                                "hi": "गंभीर — जीवन का सबसे खराब सिरदर्द",
+                                "ta": "கடுமையான — என் வாழ்க்கையில் மிகவும் மோசமான தலைவலி"
+                            },
+                            "score": 4
+                        }
+                    ]
+                },
+                {
+                    "id": "ha_q2",
+                    "text": {
+                        "en": "How long have you had this headache?",
+                        "hi": "ये सिरदर्द कब से है?",
+                        "ta": "இந்த தலைவலி எவ்வளவு நேரமாக உள்ளது?"
+                    },
+                    "type": "choice",
+                    "options": [
+                        {
+                            "value": "hours",
+                            "label": {
+                                "en": "A few hours",
+                                "hi": "कुछ घंटे",
+                                "ta": "சில மணி நேரங்கள்"
+                            },
+                            "score": 1
+                        },
+                        {
+                            "value": "1-2days",
+                            "label": {
+                                "en": "1-2 days",
+                                "hi": "1-2 दिन",
+                                "ta": "1-2 நாட்கள்"
+                            },
+                            "score": 2
+                        },
+                        {
+                            "value": "3plus",
+                            "label": {
+                                "en": "3+ days",
+                                "hi": "3+ दिन",
+                                "ta": "3+ நாட்கள்"
+                            },
+                            "score": 3
+                        }
+                    ]
+                },
+                {
+                    "id": "ha_q3",
+                    "text": {
+                        "en": "Are you experiencing any vision changes or sensitivity to light?",
+                        "hi": "क्या दृष्टि में कोई बदलाव या प्रकाश के प्रति संवेदनशीलता है?",
+                        "ta": "பார்வை மாற்றங்கள் அல்லது ஒளி உணர்திறன் உள்ளதா?"
+                    },
+                    "type": "choice",
+                    "options": [
+                        {
+                            "value": "no",
+                            "label": {
+                                "en": "No",
+                                "hi": "नहीं",
+                                "ta": "இல்லை"
+                            },
+                            "score": 0
+                        },
+                        {
+                            "value": "mild",
+                            "label": {
+                                "en": "Mild sensitivity",
+                                "hi": "हल्की संवेदनशीलता",
+                                "ta": "லேசான உணர்திறன்"
+                            },
+                            "score": 1
+                        },
+                        {
+                            "value": "yes",
+                            "label": {
+                                "en": "Yes, significant changes",
+                                "hi": "हाँ, महत्वपूर्ण बदलाव",
+                                "ta": "ஆம், குறிப்பிடத்தக்க மாற்றங்கள்"
+                            },
+                            "score": 3
+                        }
+                    ]
+                },
+                {
+                    "id": "ha_q4",
+                    "text": {
+                        "en": "Do you have a stiff neck or high fever along with the headache?",
+                        "hi": "क्या सिरदर्द के साथ गर्दन में अकड़न या तेज बुखार है?",
+                        "ta": "தலைவலியுடன் கழுத்து விறைப்பு அல்லது அதிக காய்ச்சல் உள்ளதா?"
+                    },
+                    "type": "choice",
+                    "options": [
+                        {
+                            "value": "no",
+                            "label": {
+                                "en": "No",
+                                "hi": "नहीं",
+                                "ta": "இல்லை"
+                            },
+                            "score": 0
+                        },
+                        {
+                            "value": "fever_only",
+                            "label": {
+                                "en": "Fever but no stiff neck",
+                                "hi": "बुखार है लेकिन गर्दन में अकड़न नहीं",
+                                "ta": "காய்ச்சல் உள்ளது, கழுத்து விறைப்பு இல்லை"
+                            },
+                            "score": 2
+                        },
+                        {
+                            "value": "both",
+                            "label": {
+                                "en": "Both stiff neck and fever",
+                                "hi": "गर्दन में अकड़न और बुखार दोनों",
+                                "ta": "கழுத்து விறைப்பு மற்றும் காய்ச்சல் இரண்டும்"
+                            },
+                            "score": 5
+                        }
+                    ]
+                },
+                {
+                    "id": "ha_q5",
+                    "text": {
+                        "en": "Have you had any recent head injury or trauma?",
+                        "hi": "क्या हाल ही में सिर पर चोट लगी है?",
+                        "ta": "சமீபத்தில் தலையில் அடிபட்டதா?"
+                    },
+                    "type": "choice",
+                    "options": [
+                        {
+                            "value": "no",
+                            "label": {
+                                "en": "No",
+                                "hi": "नहीं",
+                                "ta": "இல்லை"
+                            },
+                            "score": 0
+                        },
+                        {
+                            "value": "yes",
+                            "label": {
+                                "en": "Yes",
+                                "hi": "हाँ",
+                                "ta": "ஆம்"
+                            },
+                            "score": 3
+                        }
+                    ]
+                }
+            ],
+            "thresholds": {
+                "green": 4,
+                "yellow": 8
+            }
+        }
+    }
+}
