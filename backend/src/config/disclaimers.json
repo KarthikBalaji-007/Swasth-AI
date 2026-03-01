@@ -1,5 +1,3 @@
-// backend/src/config/disclaimers.json
-// Centralized disclaimer and safety-net text — externalized for easy updates
 {
     "mainDisclaimer": {
         "en": "⚠️ This tool does NOT provide medical diagnosis. It offers preliminary guidance only. Always consult a qualified healthcare professional for medical advice. In emergencies, contact local emergency services immediately.",
