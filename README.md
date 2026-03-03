@@ -5,7 +5,7 @@
 
 Swasth AI is a web-based health guidance platform that helps users understand their symptoms and decide on next steps — rest at home, visit a clinic, or seek urgent care. It does **NOT** provide medical diagnosis.
 
-## 🧠 Key Differentiator: Rules-Based Triage (NOT Raw AI)
+##  Key Differentiator: Rules-Based Triage (NOT Raw AI)
 
 Unlike simply asking an AI chatbot, Swasth AI uses a **clinically-informed rules engine** for consistent, reproducible triage decisions. AI (Gemini) is used only for understanding symptom text and generating friendly explanations — **never for the triage decision itself**.
 
@@ -17,7 +17,7 @@ Unlike simply asking an AI chatbot, Swasth AI uses a **clinically-informed rules
 | Human Oversight | None | Reviewer dashboard |
 | Audit Trail | None | Full session logging |
 
-## 🏗️ Architecture
+##  Architecture
 
 ```
 ┌─────────────┐     ┌──────────────────┐     ┌──────────┐
@@ -33,7 +33,7 @@ Unlike simply asking an AI chatbot, Swasth AI uses a **clinically-informed rules
                     └──────────────────┘
 ```
 
-## 🚀 Quick Setup
+##  Quick Setup
 
 ### Prerequisites
 - Node.js 18+
@@ -88,7 +88,7 @@ npm run dev
 
 Visit **http://localhost:5173**
 
-## 🧪 Testing Each Feature
+##  Testing Each Feature
 
 ### 1. Symptom Assessment Flow
 - Go to `/` → Click "Get Started"
@@ -113,7 +113,7 @@ Visit **http://localhost:5173**
 - Use the language dropdown (English / हिन्दी / தமிழ்)
 - All UI labels, questions, and results switch language
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 ├── backend/
@@ -138,7 +138,7 @@ Visit **http://localhost:5173**
 └── README.md
 ```
 
-## 🔌 API Endpoints
+##  API Endpoints
 
 | Method | Endpoint | Auth | Description |
 |--------|----------|------|-------------|
@@ -150,18 +150,18 @@ Visit **http://localhost:5173**
 | POST | `/api/dashboard/cases/:id/review` | JWT | Mark reviewed |
 | GET | `/api/dashboard/stats` | JWT | Dashboard stats |
 
-## 🏥 Supported Symptom Categories
+##  Supported Symptom Categories
 
 1. **Fever & Cough** — flu, infection, respiratory
 2. **Chest Discomfort** — chest pain, breathlessness
 3. **Diarrhoea & Vomiting** — GI, dehydration
 4. **Headache** — severity, vision, neck stiffness
 
-## ⚠️ Disclaimer
+## Disclaimer
 
 This tool does **NOT** provide medical diagnosis, prescribe medication, or replace professional medical advice. It provides preliminary, non-diagnostic guidance only. In emergencies, call **112** or visit your nearest emergency room.
 
-## 🌐 Languages Supported
+## Languages Supported
 
 - 🇬🇧 English
 - 🇮🇳 हिन्दी (Hindi)
